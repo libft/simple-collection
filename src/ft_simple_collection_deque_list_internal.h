@@ -6,7 +6,7 @@
 /*   By: jmaing <jmaing@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 20:06:30 by jmaing            #+#    #+#             */
-/*   Updated: 2022/05/08 21:59:35 by jmaing           ###   ########.fr       */
+/*   Updated: 2022/05/09 23:29:08 by jmaing           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ typedef struct s_deque_list_internal
 	t_deque_list						expose;
 	size_t								iterator_count;
 	size_t								mutable_iterator_count;
-	t_deque_list_iterator_node			iterator;
-	t_deque_list_iterator_node			reverse_iterator;
-	t_deque_list_mutable_iterator_node	mutable_iterator;
-	t_deque_list_mutable_iterator_node	mutable_reverse_iterator;
+	t_deque_list_iterator_node			*iterator;
+	t_deque_list_iterator_node			*reverse_iterator;
+	t_deque_list_mutable_iterator_node	*mutable_iterator;
+	t_deque_list_mutable_iterator_node	*mutable_reverse_iterator;
 }	t_deque_list_internal;
 
 typedef struct s_deque_list_iterator_internal
@@ -72,16 +72,16 @@ bool	ft_deque_list_v_peek_front(
 bool	ft_deque_list_v_peek_back(
 			t_deque_list_internal *self,
 			void **out);
-bool	ft_deque_list_v_iterator(
+bool	ft_deque_list_v_it(
 			t_deque_list_internal *self,
 			t_deque_list_iterator **out);
-bool	ft_deque_list_v_reverse_iterator(
+bool	ft_deque_list_v_reverse_it(
 			t_deque_list_internal *self,
 			t_deque_list_iterator **out);
-bool	ft_deque_list_v_mutable_iterator(
+bool	ft_deque_list_v_mutable_it(
 			t_deque_list_internal *self,
 			t_deque_list_mutable_iterator **out);
-bool	ft_deque_list_v_mutable__reverse_iterator(
+bool	ft_deque_list_v_mutable_reverse_it(
 			t_deque_list_internal *self,
 			t_deque_list_mutable_iterator **out);
 bool	ft_deque_list_v_rotate_to_front(

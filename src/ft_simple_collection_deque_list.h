@@ -6,7 +6,7 @@
 /*   By: jmaing <jmaing@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 20:06:30 by jmaing            #+#    #+#             */
-/*   Updated: 2022/05/08 22:00:32 by jmaing           ###   ########.fr       */
+/*   Updated: 2022/05/09 23:19:07 by jmaing           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ typedef struct s_deque_list
 	t_deque_list_node					*head;
 	t_deque_list_node					*tail;
 	void								(*cleaner)(void *);
-	size_t								const_iterator_count;
-	size_t								iterator_count;
 }	t_deque_list;
 
 typedef struct s_deque_list_iterator
